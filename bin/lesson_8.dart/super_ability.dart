@@ -8,4 +8,5 @@ enum SuperAbility {
   luck,
   witcher,
   stunned,
+  throwTheDice,
 }

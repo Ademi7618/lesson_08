@@ -8,6 +8,12 @@ class Boss extends GameCharacter {
   SuperAbility? defence;
   Boss(super.name, super.health, super.damage);
 
+  void takeDamage(int dmg) {
+    health -= dmg;
+    if (health < 0) health = 0;
+    print('Босс потерял $dmg  здоровья осталось: $health');
+  }
+
   void attack(List<Hero> heroes) {
     for (var hero in heroes) {
       if (hero.isAlive()) {

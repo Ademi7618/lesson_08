@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'game_character.dart';
 import 'super_ability.dart';
 import 'boss.dart';
@@ -56,6 +57,32 @@ class Golem extends Hero {
       health -= damage;
     }
     print('$Golem взал на себя 1/5 урона нанесённым боссом.');
+  }
+}
+
+class Ludoman extends Hero {
+  Ludoman(name, int health, int damage)
+    : super(name, health, damage, SuperAbility.throwTheDice);
+
+  @override
+  void applySuperPower(Boss boss, List<Hero> heroes) {
+    Random _rand = Random();
+
+    int dice1 = _rand.nextInt(6) + 1;
+    int dice2 = _rand.nextInt(6) + 1;
+
+    print('$name бросает кости: $dice1 и $dice2');
+
+    if (dice1 == dice2) {
+      int damage = dice1 * dice2;
+      print('Кости брошены!: $damage');
+      boss.takeDamage(damage);
+    } else {
+      int damage = dice1 + dice2;
+      Hero randomMate = heroes[_rand.nextInt(heroes.length)];
+      print('Костти брошены! ${randomMate.name}: $damage');
+      randomMate.health -= damage;
+    }
   }
 }
 

@@ -15,20 +15,22 @@ class RpgGame {
     final berserk = Berserk('Viking', 260, 20);
     final doc = Medic('Aibolit', 250, 5, 15);
     final assistant = Medic('Laoma', 300, 5, 5);
+    final ludoman = Ludoman('Anna', 255, 10);
     final lucky = Lucky('Sultan', 250, 15);
-    final thor = Thor('Thor', 260, 22);
-    final witcher = Witcher('Sasha', 150, 0);
-    final golem = Golem('Sergey', 500, 5);
+    // final thor = Thor('Thor', 260, 22);
+    // final witcher = Witcher('Sasha', 150, 0);
+    // final golem = Golem('Sergey', 500, 5);
     final heroes = [
       warrior1,
       doc,
       magic,
+      ludoman,
       warrior2,
-      thor,
-      witcher,
+      // thor,
+      // witcher,
       berserk,
       assistant,
-      golem,
+      // golem,
       lucky,
     ];
 
